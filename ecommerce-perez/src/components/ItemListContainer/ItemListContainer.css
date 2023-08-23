@@ -1,0 +1,13 @@
+.greet-prop{
+    text-align: center;
+    background-image: url(https://row.hyperx.com/cdn/shop/files/Gamescom_-_Homepage_banner_2880x1300_7e39e552-1032-4a40-bd63-7195856ea728_1944x.jpg?v=1692701893);
+    height: 500px;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.greet-prop h2{
+    padding-top: 15px;
+    font-size: 45px;
+}
