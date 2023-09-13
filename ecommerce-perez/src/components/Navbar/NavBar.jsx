@@ -1,4 +1,4 @@
-
+import { Link, NavLink } from "react-router-dom"
 import { Container, Nav, Navbar } from "react-bootstrap"
 import CartWidget from "./CartWidget/CartWidget"
 
@@ -8,9 +8,9 @@ const NavBar = () => {
             <Container>
                 <Navbar.Brand href="#home">Infotech</Navbar.Brand>
                 <Nav className="me-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#productos">Productos</Nav.Link>
-                    <Nav.Link href="#about">About</Nav.Link>
+                    <Link className="mx-auto p-2 text-decoration-none" to="/">Home</Link>
+                    <NavLink className="mx-auto p-2 text-decoration-none" to="/categoria/pc">PC</NavLink>
+                    <NavLink className="mx-auto p-2 text-decoration-none" to="/categoria/consolas">Consolas</NavLink>
                 </Nav>
                 <Nav>
                     <Nav.Link href="#cart">

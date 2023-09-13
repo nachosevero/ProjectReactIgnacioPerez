@@ -1,24 +1,26 @@
 import { useState } from 'react'
-
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 import NavBar from './components/navbar/navbar';
-//import Titulo from './components/titulo/titulo';
 import Footer from './components/footer/footer';
-import Greeting from './components/ItemListContainer/ItemListContainer';
-
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+//import Titulo from './components/titulo/titulo';
 // import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
+
 function App() {
   return (
-    <div>
+    <BrowserRouter>
       <NavBar />
-
-      <Greeting saludo={"¡Bienvenido a Infotech!"}/>
-
-      <Footer />
-    </div>
+      <Routes>
+        <Route path="/" element={<ItemListContainer/>}/>
+        <Route path="/categoria/:cid" element={<ItemListContainer/>}/>
+        <Route path="/detalle/:pid" element={<ItemDetailContainer/>}/>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
