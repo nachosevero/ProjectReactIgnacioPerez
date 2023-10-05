@@ -5,9 +5,9 @@ const Item = ({product}) => {
         <div className="card w-25 bg-dark text-light">
             <div className="card-body">
                 <img className="w-100" src={product.imgUrl} alt="imagen battlefield 1" />
-                <h4>{product.nombre}</h4>
-                <p>Descripción:{product.descripcion}</p>
-                <p>{product.precio}</p>
+                <h3>{product.nombre}</h3>
+                <p><strong>Descripción:</strong> {product.descripcion}</p>
+                <h3>${product.precio}</h3>
             </div>
             <div className="card-footer">
                 <Link to={`/detalle/${product.id}`}>

@@ -1,8 +1,11 @@
+import { useCartContext } from "../../context/CartContext"
 
 function CartWidget() {
+    const {quantityTotal} = useCartContext()
     return (
             <div className="carrito-wid">
-                🛒3
+                🛒
+                {quantityTotal()}
             </div>
 )}
 
