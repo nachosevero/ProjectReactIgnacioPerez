@@ -1,5 +1,3 @@
-//import { useContext } from "react"
-//import { CartContext } from "../context/CartContext"
 
 import { useCartContext } from "../context/CartContext"
 import ItemCount from "../Counter/ItemCount"
@@ -18,10 +16,10 @@ const ItemDetail = ({product}) => {
         <div className="col">
             <img className="w-25 ms-5" src={product.imgUrl} alt="imagen" />
             <div>
-                <p className="ms-5">Nombre: {product.nombre}</p>
-                <p className="ms-5">Descripción: {product.descripcion}</p>
-                <p className="ms-5">Stock: {product.stock}</p>
-                <p className="ms-5">Precio: ${product.precio}</p>
+                <p className="ms-5"><strong>Nombre:</strong> {product.nombre}</p>
+                <p className="ms-5"><strong>Descripción:</strong> {product.descripcion}</p>
+                <p className="ms-5"><strong>Stock:</strong> {product.stock}</p>
+                <p className="ms-5"><strong>Precio:</strong> ${product.precio}</p>
             </div>
         </div>
         <div className="col">

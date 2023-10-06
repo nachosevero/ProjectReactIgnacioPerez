@@ -2,13 +2,13 @@ import { useState } from "react"
 
 
 const ItemCount = ({initial, stock, onAdd}) => {
-  const [counter, setcounter] = useState(initial)
+  const [counter, setCounter] = useState(initial)
 
   const handleAdd = ()=>{
-    if(counter < stock) setcounter(counter+1)
+    if(counter < stock) setCounter(counter+1)
   }
   const handleSubstract = ()=>{
-    if(counter > initial) setcounter(counter-1)
+    if(counter > initial) setCounter(counter-1)
   }
 
   const handleOnAdd = () => onAdd(counter)

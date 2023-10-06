@@ -1,21 +1,20 @@
-//import { useContext } from "react"
-//import { CartContext } from "../context/CartContext"
-
-import { addDoc, collection, getFirestore } from "firebase/firestore"
-import { useCartContext } from "../context/CartContext"
 import { useState } from "react"
 import { Link } from "react-router-dom"
 
+import { addDoc, collection, getFirestore } from "firebase/firestore"
+import { useCartContext } from "../context/CartContext"
+
 const CartContainer = () => {
-    //const {} = useContext(CartContext)
+    
     const [dataForm, setDataForm] = useState({
         nombre: "",
         telefono: "",
         email: ""
     })
+    const [id, setId] = useState("")
 
     const {cartList, deleteCart, precioTotal, deleteItem} = useCartContext()
-    //console.log(cartList)
+    
 
     const handleAddOrder = async (evt) => {
         evt.preventDefault()
@@ -29,7 +28,7 @@ const CartContainer = () => {
         const queryDB = getFirestore()
         const ordersCollection = collection(queryDB, "orders")
         addDoc(ordersCollection, order)
-        .then(resp => console.log(resp))
+        .then(({id}) => setId(id))
         .catch(err => console.log(err))
         .finally(()=> {
             setDataForm({
@@ -39,7 +38,7 @@ const CartContainer = () => {
             })
             deleteCart()
         })
-        //console.log(order)
+        
     }
 
     const handleOnChange = (evt) => {
@@ -48,9 +47,11 @@ const CartContainer = () => {
             [evt.target.name] : evt.target.value
         })
     }
-    console.log(dataForm)
+
     return (
-        cartList.length > 0 ? 
+        <>
+            {id !== "" && <h2 className="ms-5 bg-success me-5 p-5">Su orden de compra se ha generado correctamente: {id}</h2>}
+            {cartList.length > 0 ? 
 
             <div>
                 <div>
@@ -91,9 +92,10 @@ const CartContainer = () => {
             
             :
                     <div>
-                        <h2 className="d-flex align-items-center justify-content-center">No hay productos en el Carrito.</h2>
-                        <Link to="/" className="d-flex align-items-center justify-content-center"><button className="btn btn-primary">Ir a comprar</button></Link>
-                    </div>
+                        <h2 className="d-flex align-items-center justify-content-center mt-5">No hay productos en el Carrito.</h2>
+                        <Link to="/" className="d-flex align-items-center justify-content-center"><button className="btn btn-primary mt-2">Ir a comprar</button></Link>
+                    </div>}
+        </>
 
         
     )

@@ -3,13 +3,13 @@ import { doc, getDoc, getFirestore } from "firebase/firestore"
 import {useParams} from "react-router-dom"
 
 import ItemDetail from "./ItemDetail"
-import { mFetch } from "../../data/mockFetch"
+
 
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState({})
     const {pid} = useParams()
-    console.log(pid)
+    
 
     useEffect(()=>{
         const db = getFirestore()
