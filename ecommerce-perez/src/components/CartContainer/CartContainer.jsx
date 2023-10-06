@@ -79,12 +79,12 @@ const CartContainer = () => {
                     </table>
                 </div>
                     <button className="btn btn-warning ms-5" onClick={deleteCart}>Vaciar Carrito</button>
-                    <div className="d-flex align-items-end justify-content-end me-5">{precioTotal() !== 0 && <h3>Precio Total: {precioTotal()} </h3>}</div>
+                    <div className="d-flex align-items-end justify-content-end me-5">{precioTotal() !== 0 && <h3>Precio Total: ${precioTotal()} </h3>}</div>
                     <h4 className="ms-5">Ingresa tus datos para finalizar la compra</h4>
                     <form className="ms-5" onSubmit={handleAddOrder}>
                         <h5>Nombre:</h5><input type="text" name="nombre" placeholder="ingresar el nombre" value={dataForm.nombre} onChange={handleOnChange} /><br/>
-                        <h5>Telefono:</h5><input type="text" name="telefono" placeholder="ingresar el telefono" value={dataForm.telefono} onChange={handleOnChange} />
-                        <h5>Email:</h5><input type="text" name="email" placeholder="ingresar el email" value={dataForm.email} onChange={handleOnChange} />
+                        <h5>Telefono:</h5><input type="number" name="telefono" placeholder="ingresar el telefono" value={dataForm.telefono} onChange={handleOnChange} />
+                        <h5>Email:</h5><input type="email" name="email" placeholder="ingresar el email" value={dataForm.email} onChange={handleOnChange} />
         
                     </form>
                 <div className="d-flex align-items-center justify-content-center"><button className="btn btn-lg btn-success ms-5" onClick={handleAddOrder}>Finalizar compra</button></div>

@@ -14,8 +14,8 @@ const NavBar = () => {
                     <NavLink className="mx-auto p-2 text-decoration-none" to="/categoria/consolas">Consolas</NavLink>
                 </Nav>
                 <Nav>
-                    <Link to="/cart">
-                        <CartWidget saludo={"hola saludos"} />
+                    <Link className="text-decoration-none" to="/cart"> 
+                        <CartWidget />
                     </Link>
                 </Nav>
             </Container>
